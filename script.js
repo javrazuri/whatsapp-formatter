@@ -1,4 +1,5 @@
-function btnBold() {
+
+function aplicarFormato(simbolo) {
     const textarea = document.getElementById('input-text');
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
@@ -11,20 +12,16 @@ function btnBold() {
     let nuevaPosicionStart;
     let nuevaPosicionEnd;
     
-    if (textoAntes.endsWith('*') && textoDespues.startsWith('*')) {
-        // Ya tiene formato, QUITAR asteriscos
-        const textoAntesSinAsterisco = textoAntes.slice(0, -1);
-        const textoDespuesSinAsterisco = textoDespues.slice(1);
+    if (textoAntes.endsWith(simbolo) && textoDespues.startsWith(simbolo)) {
+        const textoAntesSinSimbolo = textoAntes.slice(0, -1);
+        const textoDespuesSinSimbolo = textoDespues.slice(1);
         
-        nuevoTexto = textoAntesSinAsterisco + textoSeleccionado + textoDespuesSinAsterisco;
-        
+        nuevoTexto = textoAntesSinSimbolo + textoSeleccionado + textoDespuesSinSimbolo;
         nuevaPosicionStart = start - 1;
         nuevaPosicionEnd = end - 1;
         
     } else {
-        // No tiene formato, AGREGAR asteriscos
-        nuevoTexto = textoAntes + '*' + textoSeleccionado + '*' + textoDespues;
-        
+        nuevoTexto = textoAntes + simbolo + textoSeleccionado + simbolo + textoDespues;
         nuevaPosicionStart = start + 1;
         nuevaPosicionEnd = end + 1;
     }
@@ -33,4 +30,21 @@ function btnBold() {
     textarea.selectionStart = nuevaPosicionStart;
     textarea.selectionEnd = nuevaPosicionEnd;
     textarea.focus();
+}
+
+// Funciones simples que llaman a la genérica
+function btnBold() {
+    aplicarFormato('*');
+}
+
+function btnItalic() {
+    aplicarFormato('_');
+}
+
+function btnStrikethrough() {
+    aplicarFormato('~');
+}
+
+function btnMono() {
+    aplicarFormato('```');
 }
