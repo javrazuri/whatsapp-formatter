@@ -11,7 +11,7 @@
         <p>La siguiente herramienta permite darle formato a tus mensajes de WhatsApp:</p>
      <section></section>
     <form>
-       <button type="button" id="btn-bold" class="btn-bold" >Negrita</button> 
+       <button type="button" id="btn-bold" class="btn-bold" onclick="btnBold()">Negrita</button>
        <button type="button" id="btn-italic" class="btn-italic">Cursiva</button> 
        <button type="button" id="btn-strikethrough" class="btn-strikethrough">Tachado</button>
        <button type="button" id="btn-mono" class="btn-mono">Monoespaciado</button>  
@@ -19,7 +19,7 @@
        <button type="button" id="btn-numbered-list" class="btn-numbered-list">Lista Numerada</button> 
        <button type="button" id="btn-quote" class="btn-quote">Cita</button> 
        <button type="button" id="btn-code" class="btn-code">Código</button> 
-       <textarea name="message-whatsapp" rows="20" cols="120">Escribe el mensaje y utiliza los botones para darle formato a tu mensaje.
+       <textarea id="input-text" name="message-whatsapp" rows="20" cols="120">Escribe el mensaje y utiliza los botones para darle formato a tu mensaje.
 </textarea>
         <button type="button" id="btn-copy" class="btn-copy">Copiar mensaje</button> 
         <button type="button" id="btn-send" class="btn-send">Enviar a WhatsApp</button> 
@@ -28,6 +28,7 @@
     <section>
 
     </section>   
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
+
 </html>
