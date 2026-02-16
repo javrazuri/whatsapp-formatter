@@ -48,3 +48,11 @@ function btnStrikethrough() {
 function btnMono() {
     aplicarFormato('```');
 }
+
+function btnQuote() {
+    aplicarFormato('>');
+}  
+
+function btnCode () {
+    aplicarFormato('``');
+}

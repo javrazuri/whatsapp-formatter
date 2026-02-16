@@ -1,5 +1,5 @@
 body {
-    background-color: #EAE0C8;
+    background-color: #ffffff;
     font-family: sans-serif;
 }
 
@@ -9,4 +9,21 @@ body {
 
 .btn-italic {
     font-style: italic;
+}
+
+.btn-strikethrough {
+    text-decoration: line-through;
+}
+
+.btn-mono {
+    font-family: monospace;
+}
+
+.btn-list::before {
+    content: "• ";
+}
+
+.btn-numbered-list::before {
+    content: counter(item) ". ";
+    counter-increment: item;
 }
